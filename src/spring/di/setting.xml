@@ -36,10 +36,10 @@
 	
 	<!-- arrayList를 bean으로 등록하는 방법 -->
 	<!-- 방법1 -->
-	<!-- <bean id="exams" class="java.util.ArrayList"> -->
+	<!-- <bean id="exams" class="java.util.ArrayList"></bean> -->
 	
 	<!-- 방법2 -->
-	<util:list list-class="java.util.ArrayList">
+	<util:list id="exams" list-class="java.util.ArrayList">
 		<bean class="spring.di.entity.NewlecExam" p:kor="1" p:eng="1"></bean>
 		<ref bean="exam"></ref>
 	</util:list>
