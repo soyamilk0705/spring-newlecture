@@ -40,8 +40,8 @@ public class Program {
 //		ExamConsole console = (ExamConsole) context.getBean("console");	// setting.xml 의 id
 		ExamConsole console = context.getBean(ExamConsole.class);	// 자료형을 넘겨줌으로써 해당 자료형의 객체 얻어줌 -> 형식 변환 할 필요 없어서 선호
 		
-		Exam exam = context.getBean(Exam.class);
-		System.out.println(exam.toString());
+//		Exam exam = context.getBean(Exam.class);
+//		System.out.println(exam.toString());
 		console.print();
 		
 		/*
@@ -53,12 +53,12 @@ public class Program {
 		}
 		*/
 		
-		List<Exam> exams = (List<Exam>) context.getBean("exams");
-		exams.add(new NewlecExam(1, 1, 1, 1));
+//		List<Exam> exams = (List<Exam>) context.getBean("exams");
+//		exams.add(new NewlecExam(1, 1, 1, 1));
 				
-		for(Exam e : exams) {
-			System.out.println(e);
-		}
+//		for(Exam e : exams) {
+//			System.out.println(e);
+//		}
 
 	}
 
