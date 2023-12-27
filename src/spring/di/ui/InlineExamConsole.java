@@ -2,9 +2,11 @@ package spring.di.ui;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
 
 import spring.di.entity.Exam;
 
+@Component("console")
 public class InlineExamConsole implements ExamConsole {
 	
 	/*
@@ -13,8 +15,8 @@ public class InlineExamConsole implements ExamConsole {
 	 * 		overload 생성자가 존재하는 경우 기본 생성자가 만들어지지 않아 오류가 남 
 	 */
 	
-	@Autowired(required = false)		// required=false 로 설정하는 경우 Exam bean을 생성하는 코드가 존재하지 않아도 오류 발생 안함
-	@Qualifier("exam2")
+	@Autowired		// required=false 로 설정하는 경우 Exam bean을 생성하는 코드가 존재하지 않아도 오류 발생 안함
+	@Qualifier("exam")
 	private Exam exam;			
 	
 	public InlineExamConsole() {

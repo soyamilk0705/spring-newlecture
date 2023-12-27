@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import spring.di.entity.Exam;
@@ -34,11 +35,13 @@ public class Program {
 		 */
 		
 		// 지시서(setting.xml)를 읽어서 객체를 만들고 컨테이너에 담는데 컨테이너의 이름이 context임
-		ApplicationContext context = 
-				new ClassPathXmlApplicationContext("spring/di/setting.xml");
+//		ApplicationContext context = 
+//				new ClassPathXmlApplicationContext("spring/di/setting.xml");
 		
-//		ExamConsole console = (ExamConsole) context.getBean("console");	// setting.xml 의 id
-		ExamConsole console = context.getBean(ExamConsole.class);	// 자료형을 넘겨줌으로써 해당 자료형의 객체 얻어줌 -> 형식 변환 할 필요 없어서 선호
+		ApplicationContext context = new AnnotationConfigApplicationContext(NewlecDIConfig.class);
+		
+		ExamConsole console = (ExamConsole) context.getBean("console");	// setting.xml 의 id
+//		ExamConsole console = context.getBean(ExamConsole.class);	// 자료형을 넘겨줌으로써 해당 자료형의 객체 얻어줌 -> 형식 변환 할 필요 없어서 선호
 		
 //		Exam exam = context.getBean(Exam.class);
 //		System.out.println(exam.toString());
