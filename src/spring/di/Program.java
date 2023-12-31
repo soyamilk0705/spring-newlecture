@@ -34,10 +34,12 @@ public class Program {
 		 * console.setExam(exam);
 		 */
 		
+		// 1. XML 사용 방법
 		// 지시서(setting.xml)를 읽어서 객체를 만들고 컨테이너에 담는데 컨테이너의 이름이 context임
 //		ApplicationContext context = 
 //				new ClassPathXmlApplicationContext("spring/di/setting.xml");
 		
+		// 2. Annotation 사용 방법
 		ApplicationContext context = new AnnotationConfigApplicationContext(NewlecDIConfig.class);
 		
 		ExamConsole console = (ExamConsole) context.getBean("console");	// setting.xml 의 id
