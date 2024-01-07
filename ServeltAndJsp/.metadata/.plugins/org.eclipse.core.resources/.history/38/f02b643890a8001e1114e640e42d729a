@@ -1,0 +1,37 @@
+package com.newlecture.web;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/hi")
+public class Nana extends HttpServlet{
+	@Override
+	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// 사용자에게 보내는 encoding 방식 설정
+		response.setCharacterEncoding("UTF-8");
+		
+		// 클라이언트에서 해석하는 방식 설정
+		response.setContentType("text/html; charset=UTF-8");
+		
+		
+		PrintWriter out = response.getWriter();
+		
+		for(int i=0; i<100; i++) {
+			out.println((i+1) + ": 안녕 Servlet!!<br />");
+		}
+	}
+}
+
+
+/* url 설정 방법
+1. web.xml
+	: <servlet>, <servlet-mapping> 이용
+2. annotation : 추천 -> 협업 시 분업화 하기 편리
+	:@WebServlet()
+*/
