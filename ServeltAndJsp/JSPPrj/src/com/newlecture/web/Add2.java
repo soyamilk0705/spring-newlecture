@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.MappingMatch;
 
-@WebServlet("/add")
+@WebServlet("/add2")
 public class Add2 extends HttpServlet {
 
 	@Override
@@ -18,16 +18,16 @@ public class Add2 extends HttpServlet {
 		response.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html charset=UTF-8");
 		
-		String x_ = request.getParameter("x");
+		String[] num_ = request.getParameterValues("num");
 		String y_ = request.getParameter("y");
 		
-		int x = 0;
-		int y = 0;
+		int result = 0;
 		
-		if(!x_.equals("")) x = Integer.parseInt(x_);
-		if(!y_.equals("")) y = Integer.parseInt(y_);
-		
-		int result = x + y;
+		for(int i=0; i<num_.length; i++) {
+			// 연산은 반복되지만 선언은 반복되지 않아서 num 선언은 반복되지 않음
+			int num = Integer.parseInt(num_[i]);
+			result+=num;
+		}
 		
 		response.getWriter().printf("result is %d\n", result);
 		
