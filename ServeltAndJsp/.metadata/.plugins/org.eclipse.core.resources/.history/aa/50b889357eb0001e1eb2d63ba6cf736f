@@ -33,11 +33,10 @@ public class Calc2 extends HttpServlet {
 		
 		// 계산
 		if(op.equals("=")) {
-			// int x = (Integer) application.getAttribute("value");
+//			int x = (Integer) application.getAttribute("value");
 			int x = (Integer) session.getAttribute("value");
 			int y = v;
-			// String operator = (String) application.getAttribute("op");
-			String operator = (String) session.getAttribute("op");
+			String operator = (String) application.getAttribute("op");
 			
 			int result = 0;
 			
@@ -52,10 +51,8 @@ public class Calc2 extends HttpServlet {
 		} 
 		// 값을 저장
 		else {
-			// application.setAttribute("value", v);
-			// application.setAttribute("op", op);
-			session.setAttribute("value", v);
-			session.setAttribute("op", op);
+			application.setAttribute("value", v);
+			application.setAttribute("op", op);
 			
 		}
 		
