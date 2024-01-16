@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;calc3.html&apos; to &apos;calc3.html&apos;&#x0D;&#x0A;- Original project: &apos;JSPPrj&apos;&#x0D;&#x0A;- Destination element: &apos;calc3.html&apos;&#x0D;&#x0A;- Original element: &apos;calc3.html&apos;" description="Copy file" element1="WebContent/calc3.html" files="1" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1705409414564" target="/JSPPrj/WebContent/calc3.html" units="0" version="1.0"/>
+</session>

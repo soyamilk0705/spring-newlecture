@@ -1,8 +1,0 @@
-package com.newlecture.web;
-
-import javax.servlet.http.HttpServletMapping;
-import javax.servlet.http.MappingMatch;
-
-public class Add extends HttpServlet {
-
-}
