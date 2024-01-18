@@ -2,8 +2,6 @@ INDEX VERSION 1.4+C:\Users\dnl32\Newlecture\ServeltAndJsp\.metadata\.plugins\org
 3943212904.index
 2773567732.index
 4291199346.index
-3509213625.index
-3216405132.index
 3184931560.index
 3509213625.index
 666374393.index
