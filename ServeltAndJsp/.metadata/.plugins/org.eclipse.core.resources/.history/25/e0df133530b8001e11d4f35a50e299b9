@@ -1,0 +1,10 @@
+package com.newlecture.web.controller;
+
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+
+@WebServlet("/notice/detail")
+public class NoticeDetailController extends HttpServlet{
+
+	
+}
