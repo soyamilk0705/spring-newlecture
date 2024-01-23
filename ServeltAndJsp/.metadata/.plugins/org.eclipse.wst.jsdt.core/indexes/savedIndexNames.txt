@@ -1,14 +1,8 @@
 INDEX VERSION 1.4+C:\Users\dnl32\Newlecture\ServeltAndJsp\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
-3943212904.index
-186843849.index
-2170399338.index
 2773567732.index
 4291199346.index
-186843849.index
-3216405132.index
-3184931560.index
-3115587024.index
-1983345415.index
-3569427205.index
-1877464070.index
+3943212904.index
 666374393.index
+2170399338.index
+3184931560.index
+3216405132.index
