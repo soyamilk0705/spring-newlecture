@@ -3,5 +3,3 @@ C:\Users\dnl32\Newlecture\ServeltAndJsp\.metadata\.plugins\org.eclipse.jst.jsp.c
 \JSPPrj\src
 C:\Users\dnl32\Newlecture\ServeltAndJsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3509213625.index
 \JSPPrj\src
-C:\Users\dnl32\Newlecture\ServeltAndJsp\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\186843849.index
-\JSPPrj\src
