@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.newlecture.web.entity.NoticeView;
 import com.newlecture.web.service.NoticeService;
 
-@WebServlet("/admin/notice/list")
+@WebServlet("/admin/board/notice/list")
 public class ListController extends HttpServlet {
 	
 	@Override
@@ -30,15 +30,21 @@ public class ListController extends HttpServlet {
 			}
 			break;
 		case "ÀÏ°ý»èÁ¦":
-			for(String delId : delIds) {
-				System.out.println("del id : " + delId);
+			NoticeService service = new NoticeService();
+
+			int[] ids = new int[delIds.length];
+			for(int i=0; i<delIds.length; i++) {
+				ids[i] = Integer.parseInt(delIds[i]);
 			}
+			
+			int result = service.deleteNoticeAll(ids);
 			break;
 		}
 		
-		
+		response.sendRedirect("list");
 		
 	}
+	
 	
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

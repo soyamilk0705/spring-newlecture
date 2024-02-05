@@ -11,7 +11,6 @@ INDEX VERSION 1.131+C:\Users\dnl32\Newlecture\ServeltAndJsp\.metadata\.plugins\o
 730867187.index
 380364103.index
 3771167853.index
-639729671.index
 806729469.index
 4220280190.index
 3043342135.index
