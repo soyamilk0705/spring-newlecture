@@ -339,7 +339,8 @@ public class NoticeService {
 	public int insertNotice(Notice notice) {
 		int result = 0;
 		
-		String sql = "INSERT INTO NOTICE (TITLE, CONTENT, WRITER_ID, PUB) VALUES (?,?,?,?)";
+		String sql = "INSERT INTO NOTICE (ID, TITLE, CONTENT, WRITER_ID, PUB, REGDATE) VALUES (NOTICE_ID_SEQ.NEXTVAL, ?, ?, ?, ?, SYSDATE)";
+
 		
 		String url = "jdbc:oracle:thin:@localhost:1521/xe";
 
@@ -347,7 +348,7 @@ public class NoticeService {
 			Class.forName("oracle.jdbc.driver.OracleDriver");
 			Connection con = DriverManager.getConnection(url, "hr", "hr");
 			PreparedStatement st = con.prepareStatement(sql);
-			st.setString(1,  notice.getTitle());
+			st.setString(1, notice.getTitle());
 			st.setString(2, notice.getContent());
 			st.setString(3, notice.getWriterId());
 			st.setBoolean(4, notice.getPub());
