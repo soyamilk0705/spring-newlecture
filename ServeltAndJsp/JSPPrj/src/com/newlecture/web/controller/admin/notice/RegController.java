@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Collection;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
@@ -37,22 +38,36 @@ public class RegController extends HttpServlet {
 		String content = request.getParameter("content");
 		String isOpen = request.getParameter("open");
 		
-		Part filePart = request.getPart("file");
-		String fileName = filePart.getSubmittedFileName();
-		InputStream fis = filePart.getInputStream();
+		Collection<Part> parts = request.getParts();
+		StringBuilder builder = new StringBuilder();
 		
-		String realPath = request.getServletContext().getRealPath("/upload");
-		String filePath = realPath + File.separator + fileName;
-		FileOutputStream fos = new FileOutputStream(filePath);
 		
-		byte[] buf = new byte[1024];
-		int size = 0;
-		while((size=fis.read(buf)) != -1) {
-			fos.write(buf, 0, size); //0부터 size 갯수 만큼 반복되서 write 됨
+		for(Part p : parts) {
+			if(!p.getName().equals("file")) continue;
+			
+			Part filePart = p;
+			String fileName = filePart.getSubmittedFileName();
+			builder.append(fileName);
+			builder.append(",");
+			
+			InputStream fis = filePart.getInputStream();
+			
+			String realPath = request.getServletContext().getRealPath("/upload");
+			String filePath = realPath + File.separator + fileName;
+			FileOutputStream fos = new FileOutputStream(filePath);
+			
+			byte[] buf = new byte[1024];
+			int size = 0;
+			while((size=fis.read(buf)) != -1) {
+				fos.write(buf, 0, size); //0부터 size 갯수 만큼 반복되서 write 됨
+			}
+			
+			fos.close();
+			fis.close();
+			
 		}
 		
-		fos.close();
-		fis.close();
+		builder.delete(builder.length()-1, builder.length());
 		
 		boolean pub = false;
 		
@@ -64,11 +79,13 @@ public class RegController extends HttpServlet {
 		notice.setContent(content);
 		notice.setPub(pub);
 		notice.setWriterId("newlec");
+		notice.setFiles(builder.toString());
 		
 		NoticeService service = new NoticeService();
-//		service.insertNotice(notice);
+		int result = service.insertNotice(notice);
 		
 		response.sendRedirect("list");
+		
 		
 	}
 }
