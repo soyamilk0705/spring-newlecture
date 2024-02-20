@@ -1,2 +1,2 @@
 # spring-newlecture
-유튜브 강의
+Spring MVC, Servelt&JSP 유튜브 강의
